@@ -3,7 +3,7 @@
 .env.test
 
 # dependancies
-/node-modules
+/node_modules
 
 # Folder view configuration files
 .DS_Store
