@@ -1,0 +1,16 @@
+.score-board {
+  display: block;
+  margin-bottom: 1rem;
+  z-index: 10;
+}
+
+.score-board h1 {
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 0px 10px;
+  background-color: #2f2f2f;
+  color: #FFFFFF;
+  margin: 0;
+  border: 6px double #040F17;
+  border-radius: 10px;
+  text-shadow: 0 0 10px #FFFFFF;
+}

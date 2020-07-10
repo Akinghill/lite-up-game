@@ -1,0 +1,8 @@
+.gameBoard{
+  max-width: 540px;
+}
+.row {
+  text-align: center;
+  display: flex;
+
+}

@@ -1,0 +1,41 @@
+.GameSquare {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 0.25rem;
+  border-radius: 50%;
+  background-color: blueviolet;
+  /* box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 20px #3121ee,
+    inset -20px 0 20px #0ff,
+    inset 40px 0 40px #3121ee,
+    inset -40px 0 40px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #3121ee,
+    10px 0 80px #0ff; */
+  /* transform: rotateZ(20deg); */
+  transition: all .35s ease-in-out
+}
+
+
+/* Clicked Style */
+/* .GameSquare:hover{
+  transform: translateX(2px);
+  transform: translateY(2px);
+  box-shadow: 0px 0px 0px 0px;
+  transition: all;
+} */
+
+.OFF{
+  /* transform: rotateZ(90deg); */
+  transition: all .35s ease-in-out;
+  background-color: blanchedalmond;
+  /* box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 20px rgb(89, 83, 89),
+    inset -20px 0 20px rgb(57, 62, 62),
+    inset 40px 0 40px rgb(89, 83, 89),
+    inset -40px 0 40px rgb(57, 62, 62); */
+  /* z-index: 1; */
+}
