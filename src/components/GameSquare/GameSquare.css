@@ -4,7 +4,7 @@
   display: inline-block;
   margin: 0.25rem;
   border-radius: 50%;
-  background-color: blueviolet;
+  background-color: mediumspringgreen;
   /* box-shadow:
     inset 0 0 50px #fff,
     inset 20px 0 20px #3121ee,
@@ -30,7 +30,7 @@
 .OFF{
   /* transform: rotateZ(90deg); */
   transition: all .35s ease-in-out;
-  background-color: blanchedalmond;
+  background-color: slategray;
   /* box-shadow:
     inset 0 0 50px #fff,
     inset 20px 0 20px rgb(89, 83, 89),
