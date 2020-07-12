@@ -1,16 +1,47 @@
 .score-board {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   margin-bottom: 1rem;
   z-index: 10;
 }
 
 .score-board h1 {
   font-family: 'IBM Plex Mono', monospace;
+  flex: 1;
   padding: 0px 10px;
   background-color: #2f2f2f;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
-  border: 6px double #040F17;
+  margin-right: 20px;
+  border: 6px double #040f17;
   border-radius: 10px;
-  text-shadow: 0 0 10px #FFFFFF;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.restart {
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  background-color: #848484;
+  border: 6px double #040f17;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transform: scale(1);
+  box-shadow: 0px 0px #fff;
+  transition: all .1s ease-in-out;
+}
+
+.restart:active {
+  transform: scale(0.9);
+  box-shadow: inset 0px 0px 6px 9px #6c6c6c;
+  transition: all .1s ease-in-out;
+}
+
+#restartIcon {
+  color: #040f17;
+  height: 68%;
+  width: 100%;
 }

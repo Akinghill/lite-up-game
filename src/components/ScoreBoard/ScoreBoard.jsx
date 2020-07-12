@@ -1,10 +1,16 @@
 import React from 'react';
-import './ScoreBoard.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUndo } from '@fortawesome/free-solid-svg-icons';
+
+import './ScoreBoard.css';
 
 const ScoreBoard = ({ score }) => {
   return (
     <div className="score-board">
       <h1>Moves: {score}</h1>
+      <div className="restart">
+        <FontAwesomeIcon id="restartIcon" icon={faUndo} />
+      </div>
     </div>
   );
 };

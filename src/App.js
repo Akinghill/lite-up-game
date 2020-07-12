@@ -4,6 +4,7 @@ import GameBoard from './components/GameBoard/GameBoard';
 import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 import Title from './components/Title/Title';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -85,7 +86,7 @@ class App extends Component {
   render() {
     return (
       <div onClick={this.handleClick} className="App">
-        <Title></Title>
+        <Title/>
         <div className="game">
           <ScoreBoard score={this.state.score}></ScoreBoard>
           <GameBoard gameState={this.state.gameState}></GameBoard>
