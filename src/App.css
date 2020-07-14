@@ -5,7 +5,25 @@
   flex-direction: column;
 }
 
-.game{
+.game {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.win-text {
+  font-size: 4rem;
+    position: absolute;
+    width: 114%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #2f2f2f;
+    color: #ffffff;
+    border: 6px double #040f17;
+    border-radius: 10px;
+    text-shadow: 0 0 10px #ffffff;
+    text-align: center;
+    box-shadow: 3px 4px 4px 0px #504e4e;
 }

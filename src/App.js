@@ -19,11 +19,19 @@ class App extends Component {
 
   handleClick = (e) => {
     let id = e.target.id;
-    let newScore = this.state.score + 1;
+    if(id === "restart"){
+      console.log('clicked resetart')
+      this.setState({
+        score: 0,
+        gameState: this.randomizeGameBoard(this.createGameBoard())
+      });
+    }
+
     let row = parseInt(id[0]);
     let cell = parseInt(id[1]);
 
     if (id >= 0 && id <= 44 && !isNaN(row)) {
+      let newScore = this.state.score + 1;
       let newGameState = this.state.gameState;
       let changeThese = [row+1, row-1, cell+1, cell-1];
   
@@ -117,7 +125,7 @@ class App extends Component {
           <ScoreBoard score={this.state.score}></ScoreBoard>
           <GameBoard gameState={this.state.gameState}></GameBoard>
           {
-            this.state.gameWon ? <h1>You win</h1> : null
+            this.state.gameWon ? <h1 className="win-text">You win</h1> : null
           }
         </div>
       </div>
