@@ -3,6 +3,7 @@ import './App.css';
 import GameBoard from './components/GameBoard/GameBoard';
 import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 import Title from './components/Title/Title';
+import { randomizeGameBoard, createGameBoard  } from './logic/gameLogic'
 
 
 class App extends Component {
@@ -11,19 +12,18 @@ class App extends Component {
     this.state = {
       gameWon: false,
       score: 0,
-      gameState: [
-
-      ],
+      gameState: [],
     };
   }
 
   handleClick = (e) => {
+    console.log(e.target)
     let id = e.target.id;
-    if(id === "restart"){
+    if(id === "restart" || id === 'restartIcon'){
       console.log('clicked resetart')
       this.setState({
         score: 0,
-        gameState: this.randomizeGameBoard(this.createGameBoard())
+        gameState: randomizeGameBoard(createGameBoard())
       });
     }
 
@@ -69,52 +69,8 @@ class App extends Component {
   
   componentWillMount() {
     this.setState({
-      gameState: this.randomizeGameBoard(this.createGameBoard())
+      gameState: randomizeGameBoard(createGameBoard())
     });
-  }
-
-  createGameBoard() {
-    console.log('creating game board')
-    let numberOfRows = 5;
-    let cellsPerRow = 5;
-    let generatedBoard = [];
-    for (let i = 0; i < numberOfRows; i++) {
-      let newRow = [];
-      for (let j = 0; j < cellsPerRow; j++) {
-        newRow.push(0);
-      }
-      generatedBoard.push(newRow);
-    }
-    
-    return generatedBoard;
-  }
-
-  randomizeGameBoard(gameBoard){
-    let randomGameBoard = gameBoard;
-    let timesToShuffle = 100;
-    for(let i = 0; i <= timesToShuffle; i++){
-      let randomRow = Math.floor(Math.random() * 5);
-      let randomCell = Math.floor(Math.random() * 5);
-
-      let changeThese = [randomRow+1, randomRow-1, randomCell+1, randomCell-1];
-  
-      // Change values at these indecies
-      randomGameBoard[randomRow][randomCell] = 1 - randomGameBoard[randomRow][randomCell];
-      if(changeThese[0] <= 4){
-        randomGameBoard[changeThese[0]][randomCell] = 1 - randomGameBoard[changeThese[0]][randomCell]
-      }
-      if(changeThese[1] >= 0){
-        randomGameBoard[changeThese[1]][randomCell] = 1 - randomGameBoard[changeThese[1]][randomCell]
-      }
-      if(changeThese[2] <= 4){
-        randomGameBoard[randomRow][changeThese[2]] = 1 - randomGameBoard[randomRow][changeThese[2]]
-      }
-      if(changeThese[3] >= 0){
-        randomGameBoard[randomRow][changeThese[3]] = 1 - randomGameBoard[randomRow][changeThese[3]]
-      }
-    }
-
-    return randomGameBoard
   }
 
   render() {
