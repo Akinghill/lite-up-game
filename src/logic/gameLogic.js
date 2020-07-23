@@ -41,3 +41,17 @@ export function createGameBoard() {
   
   return generatedBoard;
 }
+
+export function gameSquareSelected(id){
+  if(id >= 0 && id <= 44 && !isNaN(id[0])){
+    return true
+  } else {
+    return false
+  }
+}
+
+export function isGameWon(state){
+  if(state.gameState.flat(2).reduce((a, b) => a + b, 0) === 0){
+    return true
+  }
+}
