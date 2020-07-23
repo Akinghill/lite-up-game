@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/lite-up-game/static/css/main.213beffc.chunk.css",
-    "main.js": "/lite-up-game/static/js/main.774c2004.chunk.js",
-    "main.js.map": "/lite-up-game/static/js/main.774c2004.chunk.js.map",
+    "main.css": "/lite-up-game/static/css/main.3ad9721a.chunk.css",
+    "main.js": "/lite-up-game/static/js/main.26b8ffac.chunk.js",
+    "main.js.map": "/lite-up-game/static/js/main.26b8ffac.chunk.js.map",
     "runtime-main.js": "/lite-up-game/static/js/runtime-main.8cfdb636.js",
     "runtime-main.js.map": "/lite-up-game/static/js/runtime-main.8cfdb636.js.map",
-    "static/js/2.93cde26d.chunk.js": "/lite-up-game/static/js/2.93cde26d.chunk.js",
-    "static/js/2.93cde26d.chunk.js.map": "/lite-up-game/static/js/2.93cde26d.chunk.js.map",
+    "static/js/2.8a5fb511.chunk.js": "/lite-up-game/static/js/2.8a5fb511.chunk.js",
+    "static/js/2.8a5fb511.chunk.js.map": "/lite-up-game/static/js/2.8a5fb511.chunk.js.map",
     "index.html": "/lite-up-game/index.html",
-    "precache-manifest.aef0b10bb7d3c45d496b9b81142490f8.js": "/lite-up-game/precache-manifest.aef0b10bb7d3c45d496b9b81142490f8.js",
+    "precache-manifest.f4bbfbd511c50bc6bc3451ed92bd6466.js": "/lite-up-game/precache-manifest.f4bbfbd511c50bc6bc3451ed92bd6466.js",
     "service-worker.js": "/lite-up-game/service-worker.js",
-    "static/css/main.213beffc.chunk.css.map": "/lite-up-game/static/css/main.213beffc.chunk.css.map",
-    "static/js/2.93cde26d.chunk.js.LICENSE.txt": "/lite-up-game/static/js/2.93cde26d.chunk.js.LICENSE.txt"
+    "static/css/main.3ad9721a.chunk.css.map": "/lite-up-game/static/css/main.3ad9721a.chunk.css.map",
+    "static/js/2.8a5fb511.chunk.js.LICENSE.txt": "/lite-up-game/static/js/2.8a5fb511.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8cfdb636.js",
-    "static/js/2.93cde26d.chunk.js",
-    "static/css/main.213beffc.chunk.css",
-    "static/js/main.774c2004.chunk.js"
+    "static/js/2.8a5fb511.chunk.js",
+    "static/css/main.3ad9721a.chunk.css",
+    "static/js/main.26b8ffac.chunk.js"
   ]
 }
