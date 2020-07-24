@@ -44,3 +44,9 @@
   text-align: center;
   box-shadow: 3px 4px 4px 0px #504e4e;
 }
+
+
+.win-options {
+  display: flex;
+  justify-content: space-evenly;
+}

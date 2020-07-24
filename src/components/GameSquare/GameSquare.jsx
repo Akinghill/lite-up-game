@@ -5,11 +5,11 @@ import './GameSquare.css';
 const GameSquare = ({isOn, id}) => {
   if (isOn) {
     return (
-      <div className="GameSquare ON" id={id}> </div>
+      <div className="GameSquare OFF" id={id}> </div>
     )
   }
   return (
-    <div className="GameSquare OFF" id={id}> </div>
+    <div className="GameSquare ON" id={id}> </div>
   )
 
 

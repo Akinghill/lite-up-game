@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import GameBoard from './components/GameBoard/GameBoard';
-import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 import Title from './components/Title/Title';
-import WinScreen from './components/WinScreen/WinScreen';
+import Game from './components/Game/Game';
 import Debugger from './components/Debugger/Debugger';
 import {
   randomizeGameBoard,
@@ -29,12 +27,11 @@ class App extends Component {
         gameWon: true,
       });
     }
-    if (id === 'restart' || id === 'restartIcon') {
-      console.log('clicked resetart');
+    if (id === 'restart' || id === 'restartIcon' || id === 'play-again') {
       this.setState({
         score: 0,
         gameState: randomizeGameBoard(createGameBoard()),
-        gameWon: false
+        gameWon: false,
       });
     }
 
@@ -86,14 +83,11 @@ class App extends Component {
   }
 
   render() {
+    const { score, gameState, gameWon } = this.state;
     return (
       <div onClick={this.handleClick} className="App">
         <Title />
-        <div className="game">
-          <ScoreBoard score={this.state.score}></ScoreBoard>
-          <GameBoard gameState={this.state.gameState}></GameBoard>
-          {this.state.gameWon ? <WinScreen /> : null}
-        </div>
+        <Game score={score} gameState={gameState} gameWon={gameWon} />
         <Debugger />
       </div>
     );

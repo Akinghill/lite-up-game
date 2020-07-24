@@ -4,7 +4,7 @@ import './Title.css'
 const Title = () => {
   return (
     <h1 id='title'>
-      LITE UP!
+      LUMiN
     </h1>
   )
 }

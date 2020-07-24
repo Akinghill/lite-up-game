@@ -27,7 +27,6 @@ export function randomizeGameBoard(gameBoard){
 }
 
 export function createGameBoard() {
-  console.log('creating game board')
   let numberOfRows = 5;
   let cellsPerRow = 5;
   let generatedBoard = [];
