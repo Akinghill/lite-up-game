@@ -1,7 +1,7 @@
 {
   "name": "lumin",
   "version": "0.1.0",
-  "homepage": "http://akinghill.github.io/lite-up-game",
+  "homepage": "http://akinghill.github.io/lumin",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
