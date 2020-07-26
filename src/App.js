@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import Title from './components/Title/Title';
+// import Login from './components/Login/Login';
 import Game from './components/Game/Game';
-import Debugger from './components/Debugger/Debugger';
+// import Timer from './components/Timer/Timer';
+// import Debugger from './components/Debugger/Debugger';
 import {
   randomizeGameBoard,
   createGameBoard,
@@ -88,7 +90,7 @@ class App extends Component {
       <div onClick={this.handleClick} className="App">
         <Title />
         <Game score={score} gameState={gameState} gameWon={gameWon} />
-        <Debugger />
+        {/* <Debugger /> */}
       </div>
     );
   }

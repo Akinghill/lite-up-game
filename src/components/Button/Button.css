@@ -13,9 +13,13 @@
   text-align: center;
   box-shadow: 3px 4px 4px 0px #504e4e;
   transition: all 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:active {
-  transform: scale(0.95);
+  transform: translate(0, .3rem);
+  box-shadow: 1px 0px 4px 0px #504e4e;
   transition: all 0.1s ease-in-out;
 }

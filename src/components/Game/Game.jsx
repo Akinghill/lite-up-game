@@ -7,7 +7,7 @@ import WinScreen from '../WinScreen/WinScreen'
 const Game = ({gameState, score, gameWon}) => {
     return (
       <div className="game">
-        <ScoreBoard score={score}/>
+        <ScoreBoard score={score} gameWon={gameWon}/>
         <GameBoard gameState={gameState}/>
         {gameWon ? <WinScreen /> : null}
       </div>

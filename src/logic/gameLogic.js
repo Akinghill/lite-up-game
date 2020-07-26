@@ -1,6 +1,6 @@
 export function randomizeGameBoard(gameBoard){
   let randomGameBoard = gameBoard;
-  let timesToShuffle = 100;
+  let timesToShuffle = 1000;
   for(let i = 0; i <= timesToShuffle; i++){
     let randomRow = Math.floor(Math.random() * 5);
     let randomCell = Math.floor(Math.random() * 5);
