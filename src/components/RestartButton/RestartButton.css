@@ -1,6 +1,7 @@
 .restart {
-  width: 50px;
-  height: 50px;
+  justify-content: center;
+  width: 66px;
+  height: 40%;
   align-self: flex-end;
   background-color: #848484;
   border: 6px double #040f17;
@@ -22,7 +23,7 @@
 #restartIcon {
   color: #040f17;
   height: 68%;
-  width: 100%;
+  width: 60%;
   z-index: -10;
   padding: 9px 0px;
 }

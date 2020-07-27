@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Title from './components/Title/Title';
-// import Login from './components/Login/Login';
+import Login from './components/Login/Login';
 import Game from './components/Game/Game';
 // import Timer from './components/Timer/Timer';
 // import Debugger from './components/Debugger/Debugger';
@@ -88,6 +88,7 @@ class App extends Component {
     const { score, gameState, gameWon } = this.state;
     return (
       <div onClick={this.handleClick} className="App">
+        {/* <Login/>  */}
         <Title />
         <Game score={score} gameState={gameState} gameWon={gameWon} />
         {/* <Debugger /> */}

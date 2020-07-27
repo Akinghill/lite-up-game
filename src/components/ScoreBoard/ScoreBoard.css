@@ -6,7 +6,7 @@
   z-index: 10;
 }
 
-.score-board #time {
+.score-board #score {
   font-family: 'IBM Plex Mono', monospace;
   flex: 1;
   padding: 0px 10px;
