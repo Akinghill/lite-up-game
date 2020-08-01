@@ -44,18 +44,24 @@ export default class Register extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // const data = new FormData(event.target);
-    const data = new URLSearchParams();
-    for (const pair of new FormData(event.target)) {
-      data.append(pair[0], pair[1]);
-    }
-    console.log(data)
 
-    
-    fetch('http://localhost:5000/users/register', {
+    const data = {
+      name: this.state.nameVal,
+      email: this.state.emailVal,
+      password: this.state.passVal,
+      password2: this.state.pass2Val
+    }
+
+    const requestOptions = {
       method: 'POST',
-      body: data
-    }).then(response => console.log(response))
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    };
+
+    fetch('http://localhost:5000/users/register', requestOptions)
+      .then(response => console.log(response))
+      .catch(err => console.log(err))
+
     this.props.onRouteChange('home')
   }
 
@@ -63,8 +69,8 @@ export default class Register extends Component {
     // const { nameVal, emailVal, passVal, pass2Val } = this.state 
     return (
       <div className='register-window border'>
-        <form className="register-form" 
-        onSubmit={this.handleSubmit}>
+        <form className="register-form"
+          onSubmit={this.handleSubmit}>
           <fieldset>
             <legend>Register</legend>
 
@@ -75,7 +81,6 @@ export default class Register extends Component {
               name="name"
               className="form-control"
               placeholder="Name"
-              // value={nameVal}
               onChange={this.handleChange}
             />
             <label htmlFor="email" className="vhide">Email</label>
@@ -85,7 +90,6 @@ export default class Register extends Component {
               type="email"
               placeholder="Email"
               required minLength="2"
-              // value={emailVal}
               onChange={this.handleChange}
             />
 
@@ -96,7 +100,6 @@ export default class Register extends Component {
               type="password"
               placeholder="Password"
               required minLength="6"
-              // value={passVal}
               onChange={this.handleChange}
             />
 
@@ -106,7 +109,6 @@ export default class Register extends Component {
               id="password2"
               name="password2"
               placeholder="Confirm Password"
-              // value={pass2Val}
               onChange={this.handleChange}
             />
 

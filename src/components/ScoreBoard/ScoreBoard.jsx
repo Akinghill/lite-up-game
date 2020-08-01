@@ -1,19 +1,30 @@
 import React from 'react'
 import './ScoreBoard.css'
-import data from './fakedata'
+// import data from './fakedata'
 import { Component } from 'react'
 
 export default class ScoreBoard extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      topScores: []
+    }
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/users/', { method: "GET" })
+    fetch('http://localhost:5000/highscores', { method: "GET" })
       .then(response => response.json())
       .then(result => {
-        this.setState({ users: result, isFetching: false })
+        this.setState({
+          topScores:[
+            {
+              name: result[0].name
+            },
+            {
+              name: result[1].name
+            },
+          ]
+        })
       })
       .catch(e => {
         console.log(e);
@@ -22,6 +33,7 @@ export default class ScoreBoard extends Component {
   }
 
   render() {
+    const data = this.state.topScores
     return (
       <div className='score-board contianer'>
         <h1 className='score-title'>TOP SCORES</h1>
@@ -31,8 +43,8 @@ export default class ScoreBoard extends Component {
               <p key={i}>
                 {
                   `${i + 1}: 
-                ${person.initials} \t 
-                ${person.bestScore}`
+                ${person.name} \t 
+                ${'as'}`
                 }
               </p>))
           }

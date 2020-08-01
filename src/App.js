@@ -116,7 +116,7 @@ class App extends Component {
         {route === 'register' ? (
           <Register onRouteChange={this.onRouteChange} />
         ) : route === 'login' ? (
-          <Login onRouteChange={this.onRouteChange} />
+          <Login onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
         ) : null}
         <Game
           score={score}

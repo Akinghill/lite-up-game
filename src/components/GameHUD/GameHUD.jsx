@@ -7,7 +7,7 @@ const GameHUD = ({ score, gameWon, isSignedIn, user }) => {
   return (
     <div className="game-hud">
       {
-        isSignedIn  ? <p id="player-name">Player: {user.name}</p> 
+        user.name  ? <p id="player-name">Player: {user.name}</p> 
         : <p id="player-name">Player: ANON</p>
       }
      
