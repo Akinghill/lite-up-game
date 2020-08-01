@@ -1,15 +1,44 @@
-import React from 'react';
-import RestartButton from '../RestartButton/RestartButton'
+import React from 'react'
+import './ScoreBoard.css'
+import data from './fakedata'
+import { Component } from 'react'
 
-import './ScoreBoard.css';
+export default class ScoreBoard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
 
-const ScoreBoard = ({ score, gameWon }) => {
-  return (
-    <div className="score-board">
-      <p id="score">Moves: {score}</p>
-      <RestartButton></RestartButton>
-    </div>
-  );
-};
+  componentDidMount() {
+    fetch('http://localhost:5000/users/', { method: "GET" })
+      .then(response => response.json())
+      .then(result => {
+        this.setState({ users: result, isFetching: false })
+      })
+      .catch(e => {
+        console.log(e);
+        this.setState({ ...this.state, isFetching: false });
+      });
+  }
 
-export default ScoreBoard;
+  render() {
+    return (
+      <div className='score-board contianer'>
+        <h1 className='score-title'>TOP SCORES</h1>
+        <div className='scores-grid'>
+          {
+            data.map((person, i) => (
+              <p key={i}>
+                {
+                  `${i + 1}: 
+                ${person.initials} \t 
+                ${person.bestScore}`
+                }
+              </p>))
+          }
+        </div>
+      </div >
+    )
+  }
+
+}

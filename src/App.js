@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
-import Title from './components/Title/Title';
+import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 import Login from './components/Login/Login';
+import Register from './components/Login/Register';
 import Game from './components/Game/Game';
 // import Timer from './components/Timer/Timer';
-// import Debugger from './components/Debugger/Debugger';
+import Debugger from './components/Debugger/Debugger';
 import {
   randomizeGameBoard,
   createGameBoard,
   gameSquareSelected,
   isGameWon,
+  processInput,
 } from './logic/gameLogic';
+
+const initialState = {
+  gameWon: false,
+  score: 0,
+  gameState: [],
+  route: 'home',
+  highScoreData: [],
+  isSignedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    entries: 0,
+    joined: '',
+  },
+};
 
 class App extends Component {
   constructor(props) {
@@ -19,8 +37,28 @@ class App extends Component {
       gameWon: false,
       score: 0,
       gameState: [],
+      route: 'home',
+      highScoreData: [],
+      isSignedIn: false,
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        entries: 0,
+        joined: '',
+      },
     };
   }
+
+  loadUser = (data) => {
+    this.setState({
+      user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+      },
+    });
+  };
 
   handleClick = (e) => {
     let id = e.target.id;
@@ -36,44 +74,25 @@ class App extends Component {
         gameWon: false,
       });
     }
-
-    let row = parseInt(id[0]);
-    let cell = parseInt(id[1]);
-
+    if (id === 'login') {
+      this.setState({
+        route: 'login',
+      });
+    }
     // Verify a game square was selected.
     if (gameSquareSelected(id)) {
-      let newScore = this.state.score + 1;
       let newGameState = this.state.gameState;
-      let changeThese = [row + 1, row - 1, cell + 1, cell - 1];
-
-      // Change values at these indecies
-      newGameState[row][cell] = 1 - newGameState[row][cell];
-      if (changeThese[0] <= 4) {
-        newGameState[changeThese[0]][cell] =
-          1 - newGameState[changeThese[0]][cell];
-      }
-      if (changeThese[1] >= 0) {
-        newGameState[changeThese[1]][cell] =
-          1 - newGameState[changeThese[1]][cell];
-      }
-      if (changeThese[2] <= 4) {
-        newGameState[row][changeThese[2]] =
-          1 - newGameState[row][changeThese[2]];
-      }
-      if (changeThese[3] >= 0) {
-        newGameState[row][changeThese[3]] =
-          1 - newGameState[row][changeThese[3]];
-      }
+      let processedGameState = processInput(id, newGameState)
 
       if (isGameWon(this.state)) {
         this.setState({
           gameWon: true,
         });
       }
-
+    
       this.setState({
-        score: newScore,
-        gameState: newGameState,
+        score: Number(this.state.score) + 1,
+        gameState: processedGameState,
       });
     }
   };
@@ -84,14 +103,30 @@ class App extends Component {
     });
   }
 
+  onRouteChange = (route) => {
+    this.setState({
+      route: route,
+    });
+  };
+
   render() {
-    const { score, gameState, gameWon } = this.state;
+    const { score, gameState, gameWon, route, user } = this.state;
     return (
       <div onClick={this.handleClick} className="App">
-        {/* <Login/>  */}
-        <Title />
-        <Game score={score} gameState={gameState} gameWon={gameWon} />
-        {/* <Debugger /> */}
+        {route === 'register' ? (
+          <Register onRouteChange={this.onRouteChange} />
+        ) : route === 'login' ? (
+          <Login onRouteChange={this.onRouteChange} />
+        ) : null}
+        <Game
+          score={score}
+          gameState={gameState}
+          gameWon={gameWon}
+          onRouteChange={this.onRouteChange}
+          user={user}
+        />
+        <ScoreBoard highScoreData={this.state.highScoreData} />
+        <Debugger />
       </div>
     );
   }

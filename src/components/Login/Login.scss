@@ -68,7 +68,9 @@ input {
     transition: all 0.3s ease;
   }
 
-  &[type='text'] {
+  &[type='text'],
+  &[type='password'],
+  &[type='email'] {
     font-size: 1.2em;
     line-height: 1;
     padding: 0.3em 0.4em;
@@ -210,13 +212,13 @@ body {
   box-sizing: border-box;
 }
 
-
-.login-window {
+.login-window,
+.register-window {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 55%;
-  height: 44vh;
+  width: 478px;
+  height: 50vh;
   z-index: 20;
   transform: translate(-50%, -50%);
   display: flex;
@@ -236,7 +238,8 @@ body {
   box-shadow: 3px 4px 4px 0px #504e4e;
 }
 
-.login-form {
+.login-form,
+.register-form {
   height: 100%;
   display: flex;
   align-items: center;

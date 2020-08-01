@@ -1,15 +1,17 @@
 import React from 'react'
 import GameBoard from '../GameBoard/GameBoard'
-import ScoreBoard from '../ScoreBoard/ScoreBoard'
+import GameHUD from '../GameHUD/GameHUD'
 import WinScreen from '../WinScreen/WinScreen'
+import Title from '../Title/Title'
 
 
-const Game = ({gameState, score, gameWon}) => {
+const Game = ({gameState, score, gameWon, onRouteChange, user}) => {
     return (
       <div className="game">
-        <ScoreBoard score={score} gameWon={gameWon}/>
+        <Title />
+        <GameHUD score={score} gameWon={gameWon} user={user}/>
         <GameBoard gameState={gameState}/>
-        {gameWon ? <WinScreen /> : null}
+        {gameWon ? <WinScreen onRouteChange={onRouteChange} /> : null}
       </div>
     )
 }
