@@ -140,8 +140,8 @@ class App extends Component {
           onRouteChange={this.onRouteChange}
           user={user}
         />
-        <ScoreBoard highScoreData={this.state.highScoreData} />
-        <Debugger />
+        {/* <ScoreBoard highScoreData={this.state.highScoreData} /> */}
+        {/* <Debugger /> */}
       </div>
     );
   }
