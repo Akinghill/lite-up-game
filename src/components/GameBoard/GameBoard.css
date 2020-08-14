@@ -1,8 +1,11 @@
 .gameBoard{
+  border-radius: 10px;
   max-width: 540px;
+  padding: 3px;
+  border: double #03fa9a 5px;
+  margin-bottom: 20px;
 }
 .row {
   text-align: center;
   display: flex;
-
 }

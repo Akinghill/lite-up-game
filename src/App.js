@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import Game from './components/Game/Game';
 import Debugger from './components/Debugger/Debugger';
+import Menu from './components/Menu/Menu';
 import {
   randomizeGameBoard,
   createGameBoard,
@@ -142,6 +143,7 @@ class App extends Component {
         />
         {/* <ScoreBoard highScoreData={this.state.highScoreData} /> */}
         {/* <Debugger /> */}
+        <Menu/>
       </div>
     );
   }
